@@ -1,4 +1,4 @@
-SRCS			= main.cpp Zombie.cpp                
+SRCS			= main.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
@@ -20,4 +20,4 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-.PHONY:			all clean fclean re test%  
+.PHONY:			all clean fclean re test%  % 
