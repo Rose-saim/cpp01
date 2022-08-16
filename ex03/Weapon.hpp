@@ -2,7 +2,6 @@
 #define WEAPON
 
 #include <iostream>
-#include <unistr.h>
 
 class Weapon
 {

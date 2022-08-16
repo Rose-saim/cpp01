@@ -11,8 +11,8 @@ Zombie::~Zombie()
 
 void	Zombie::setname(std::string name, int i)
 {
-	std::string str = "(" + std::to_string(i) + ")";
-	this->name = name + str;
+	char c = i + '0';
+	this->name = name + c;
 }
 
 std::string	Zombie::announce()

@@ -1,6 +1,6 @@
-#include <iostream>
-#include <cstring>
-#include <fstream>	// ifstream & outstream 사용
+# include <iostream>
+# include <string>
+# include <fstream>
 
 void	write_line(bool &first, std::ofstream &write_file, std::string line, std::string replace)
 {
@@ -51,9 +51,9 @@ int	main(int argc, char **argv)
 {
 	if (argc != 4)
 		return 1;
-	std::string	file_name(argv[1]);
+	std::string		file_name(argv[1]);
 	std::ifstream	read_file(file_name);
-	std::ofstream	write_file(file_name + ".replace");
+	std::ofstream	write_file(std::string(file_name) + ".replace");
 
 	if (!read_file || !read_file.is_open() || !write_file.is_open())
 	{
