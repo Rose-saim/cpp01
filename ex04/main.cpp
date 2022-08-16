@@ -52,8 +52,9 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 		return 1;
 	std::string		file_name(argv[1]);
-	std::ifstream	read_file(file_name);
-	std::ofstream	write_file(std::string(file_name) + ".replace");
+	std::ifstream	read_file(file_name.c_str());
+	std::string		replace = file_name + ".replace";
+	std::ofstream	write_file(replace.c_str());
 
 	if (!read_file || !read_file.is_open() || !write_file.is_open())
 	{
