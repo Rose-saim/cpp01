@@ -52,14 +52,25 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 		return 1;
 	std::string		file_name(argv[1]);
+	std::string		s1(argv[2]);
+	if (file_name == "" || s1 == "")
+	{
+		std::cout << "Your file and s1 is empty !" << std::endl;
+		return 1;
+	}
 	std::ifstream	read_file(file_name.c_str());
+	if (!read_file || !read_file.is_open())
+	{
+		std::cout << "File doesn't exist" << std::endl;
+		read_file.close();
+		return 1;
+	}
 	std::string		replace = file_name + ".replace";
 	std::ofstream	write_file(replace.c_str());
-
-	if (!read_file || !read_file.is_open() || !write_file.is_open())
+	if (!write_file.is_open())
 	{
+		std::cout << "Cannon't write in this file" << std::endl;
 		write_file.close();
-		read_file.close();
 		return 1;
 	}
 

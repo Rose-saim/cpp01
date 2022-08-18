@@ -15,7 +15,7 @@ typedef struct s_complain
 
 class Harl
 {
-	public:
+	private:
 		t_complain	tab_complain[4];
 		void debug( void );
 		void info( void );

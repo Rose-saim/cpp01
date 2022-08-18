@@ -5,7 +5,7 @@ CXX				= clang++
 RM				= rm -f
 CXXFLAGS		= -std=c++98 -Wall -Wextra -Werror
 
-NAME			= Phonebook
+NAME			= Pointer
 
 all:			$(NAME)
 

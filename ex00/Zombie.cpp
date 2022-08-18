@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name): name(name)
 {
 	std::cout << "Create zombie " << name << std::endl;
 	return ;

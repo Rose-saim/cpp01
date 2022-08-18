@@ -45,7 +45,6 @@ void	Harl::warning(void)
 }
 void	Harl::error(void)
 {
-	std::cout << "[ ERROR ]" << std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
@@ -56,5 +55,6 @@ void	Harl::complain(std::string level)
 		if (this->tab_complain[i].funcToCall == level)
 			return (this->*tab_complain[i].funcPtr)(); 
 	}
+	std::cout << "[ NO EXIST ]" << std::endl;
 	std::cout << level << " does not exist " << std::endl;
 }
