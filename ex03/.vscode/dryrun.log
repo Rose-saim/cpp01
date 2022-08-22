@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/myrmarti/cpp001/ex03'
+clang++ -std=c++98 -Wall -Wextra -Werror   -c -o main.o main.cpp
+clang++ -std=c++98 -Wall -Wextra -Werror   -c -o Weapon.o Weapon.cpp
+clang++ -std=c++98 -Wall -Wextra -Werror   -c -o HumanA.o HumanA.cpp
+clang++ -std=c++98 -Wall -Wextra -Werror   -c -o HumanB.o HumanB.cpp
+clang++ -std=c++98 -Wall -Wextra -Werror -o Weapon main.o Weapon.o HumanA.o HumanB.o
+make: Leaving directory '/mnt/nfs/homes/myrmarti/cpp001/ex03'
+ 

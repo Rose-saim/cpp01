@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	std::string		s1(argv[2]);
 	if (file_name == "" || s1 == "")
 	{
-		std::cout << "Your file and s1 is empty !" << std::endl;
+		std::cout << "Your arguments are empty !" << std::endl;
 		return 1;
 	}
 	std::ifstream	read_file(file_name.c_str());
@@ -69,7 +69,7 @@ int	main(int argc, char **argv)
 	std::ofstream	write_file(replace.c_str());
 	if (!write_file.is_open())
 	{
-		std::cout << "Cannon't write in this file" << std::endl;
+		std::cout << "Permission denied." << std::endl;
 		write_file.close();
 		return 1;
 	}

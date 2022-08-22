@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
+make: *** No rule to make target 'main.o', needed by 'Weapon'.  Stop.
 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 22 16:14:49 2022
+# Make data base, printed on Mon Aug 22 15:38:34 2022
 
 # Variables
 
@@ -35,9 +35,11 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /mnt/nfs/homes/myrmarti/cpp001
+CURDIR := /mnt/nfs/homes/myrmarti/cpp001/ex03
 # makefile
 SHELL = /bin/sh
+# makefile (from 'Makefile', line 5)
+RM = rm -f
 # environment
 VTE_VERSION = 6003
 # environment
@@ -48,24 +50,28 @@ _ = /usr/bin/code
 JOURNAL_STREAM = 9:2189369
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
 IM_CONFIG_PHASE = 1
 # 'override' directive
 GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 6)
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 # environment
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/myrmarti/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/40240/bus
+# makefile (from 'Makefile', line 2)
+OBJS = $(SRCS:.cpp=.o)
 # environment
 MANAGERPID = 321706
 # environment
-VSCODE_CWD = /mnt/nfs/homes/myrmarti/cpp001
+VSCODE_CWD = /mnt/nfs/homes/myrmarti/cpp001/ex03
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session7
 # environment
@@ -105,7 +111,7 @@ SSH_AUTH_SOCK = /run/user/40240/keyring/ssh
 # environment
 DISPLAY = :0
 # environment
-PWD = /mnt/nfs/homes/myrmarti/cpp001
+PWD = /mnt/nfs/homes/myrmarti/cpp001/ex03
 # default
 .LOADED := 
 # environment
@@ -144,6 +150,8 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 1)
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 # environment
 SHLVL = 2
 # default
@@ -151,7 +159,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = myrmarti
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := all
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -163,7 +171,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/myrmarti/cpp001/ex04
+OLDPWD = /mnt/nfs/homes/myrmarti/cpp001
 # default
 .VARIABLES := 
 # automatic
@@ -192,6 +200,8 @@ DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# makefile (from 'Makefile', line 4)
+CXX = clang++
 # environment
 PAGER = less
 # environment
@@ -212,6 +222,8 @@ CHROME_DESKTOP = code-url-handler.desktop
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 8)
+NAME = Weapon
 # default
 .RECIPEPREFIX := 
 # environment
@@ -221,9 +233,9 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/40240/docker.sock
 # environment
-VSCODE_PID = 337994
+VSCODE_PID = 324023
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=10/127=8%
+# Load=111/1024=11%, Rehash=0, Collisions=20/141=14%
 
 # Pattern-specific Variable Values
 
@@ -231,9 +243,9 @@ VSCODE_PID = 337994
 
 # Directories
 
-# . (device 54, inode 52367895): 10 files, no impossibilities.
+# . (device 54, inode 54693886): 11 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -242,25 +254,57 @@ VSCODE_PID = 337994
 # Files
 
 # Not a target:
-all:
-#  Command line target.
-#  Implicit rule search has been done.
+HumanB.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+%:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has not been updated.
+
+all: Weapon
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Weapon: main.o Weapon.o HumanA.o HumanB.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 13):
+				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+# Not a target:
+Weapon.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all clean fclean re test% %
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+ 
+#  Last modified 2022-08-18 17:55:20.745176916
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+				$(RM) $(NAME)
 
 # Not a target:
 .DEFAULT:
@@ -268,28 +312,52 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+re: fclean Weapon
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+				$(RM) $(OBJS)
+
 # Not a target:
-GNUmakefile:
+HumanA.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.o:
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+#  File has not been updated.
+
+test%:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/41=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 133 B / avg = 7 B
-# current buf: size = 8162 B / used = 133 B / count = 18 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 224 B / avg = 8 B
+# current buf: size = 8162 B / used = 224 B / count = 27 / avg = 8 B
 
-# strcache performance: lookups = 21 / hit rate = 14%
+# strcache performance: lookups = 46 / hit rate = 41%
 # hash-table stats:
- 
-# Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Mon Aug 22 16:14:49 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/46=2%
+# Finished Make data base on Mon Aug 22 15:38:34 2022
 
  
